@@ -9,12 +9,17 @@ using namespace mathtool;
 #include <vector>
 using namespace std;
 
-class Cell {
+class Cell 
+{
 public:
   Cell();
   void Init(int _i, int _j, Point _center, double _dx, double _dy, bool _blocked);
   void Draw();
-  Vector3d GetCenter() { return Vector3d(center.GetX(),center.GetY(),0); }
+  Vector3d GetCenter() 
+  { 
+	  return Vector3d(center.GetX(),center.GetY(),0); 
+  
+  }
   bool IsCollision(Vector3d pNew, double radius);
 
   //this function will set maximums for the cell and return values
@@ -33,7 +38,8 @@ public:
   bool isCol;
 };
 
-class Environment {
+class Environment 
+{
 public:
   Environment();
   Environment(string _inputFile, double _xmin, double _xmax, double _ymin, double _ymax );
@@ -47,7 +53,10 @@ public:
 
   void AddAttractionPoint(double tx, double ty);
 
-  vector<Vector3d>& GetAttractionPoints() { return attractionPts; }
+  vector<Vector3d>& GetAttractionPoints() 
+  { 
+	  return attractionPts; 
+  }
 
   Cell** cells;
 

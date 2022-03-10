@@ -43,7 +43,9 @@ bool addIndividual=true;
 bool addGroup=false;
 bool addAttractionPt=false;
 
-void init() {
+//Setups Top-Down View
+void init() 
+{
 	//glClearColor(1.0, 1.0, 1.0, 0.0); //Set display-window color to white.
 	glClearColor(bColor.r, bColor.g, bColor.b, 0.0); //Set display-window color to white.
 
@@ -56,7 +58,8 @@ void init() {
 	  gEnv = new Environment("env.txt",-windowW/2,windowW/2, -windowH/2, windowH/2);
 }
 
-void setFollowCamera() {
+void setFollowCamera() 
+{
   cout << "setFollowCamera followPt: " << followPt << endl;
   glMatrixMode(GL_PROJECTION);      //Set projection parameters.
   glLoadIdentity();
@@ -67,43 +70,53 @@ void setFollowCamera() {
   gluOrtho2D(newXMin, newXMax, newYMin, newYMax);
 }
 
-void WritePointXYONLYsToFile(string filename) {
+void WritePointXYONLYsToFile(string filename) 
+{
+	//TODO
 }
 
-void LoadPointXYONLYsFromFile(string filename) {
+void LoadPointXYONLYsFromFile(string filename) 
+{
+	//TODO
 }
 
-
-void menu(int num) {
+//Menu Functionality
+void menu(int num) 
+{
   string fileToLoad="";
   bool fileSpecified = false;
-  if(num==-1) {
-    //points.clear();
-    //edges.clear();
-    glutPostRedisplay();
-  }
-  else if(num==0) {
-    glutDestroyWindow(window_id);
-    exit(0);
-  }
-  else if(num==1) {
-    addIndividual=true;
-    addGroup=false;
-    addAttractionPt = false;
-  }
-  else if(num==2) {
-    addIndividual=false;
-    addGroup=true;
-    addAttractionPt = false;
-  }
-  else if( num == 3 ) {
-    addAttractionPt = true;
-    addIndividual=false;
-    addGroup = false;
+  switch (num)
+  {
+  case -1:
+	  //points.clear();
+	  //edges.clear();
+	  glutPostRedisplay();
+	  break;
+  case 0:
+	  glutDestroyWindow(window_id);
+	  exit(0);
+	  break;
+  case 1:
+	  addIndividual = true;
+	  addGroup = false;
+	  addAttractionPt = false;
+	  break;
+  case 2:
+	  addIndividual = false;
+	  addGroup = true;
+	  addAttractionPt = false;
+	  break;
+  case 3:
+	  addAttractionPt = true;
+	  addIndividual = false;
+	  addGroup = false;
+	  break;
   }
 }
 
-void createMenu() {
+//Allows for creation of a Menu
+void createMenu() 
+{
 	menu_id = glutCreateMenu(menu);
 	glutAddMenuEntry("Clear PointXYONLYs", -1);
 	glutAddMenuEntry("Quit",0);
@@ -122,26 +135,33 @@ double alpha = 0.5;
 
 void customDraw();
 
-void update() {
-  if( isSimulating ) 
-    gSim.Update();
+void update() 
+{
+	if (isSimulating)
+	{
+		gSim.Update();
+	} 
   //cout << "update mousePressed=" << mousePressed << endl;
-  if( mousePressed ) {
-    speedTheta = changeY*0.2;
-    timeSincePress += 1;
-  }
+	if( mousePressed ) 
+	{
+		speedTheta = changeY*0.2;
+		timeSincePress += 1;
+	}
 
-  if( isFollowing ) {
+	if( isFollowing ) 
+	{
     followPt = gSim.GetPointToFollow();
     cout << "update::isFollowing " << isFollowing << " followPt: " << followPt << endl;
     setFollowCamera();
-  }
+	}
 
-  customDraw();
+	customDraw();
 }
 
-void customDraw() {
-  if( 0 && ++numDraws % 100 == 0 ) {
+void customDraw() 
+{
+  if(0 && (++numDraws % 100 == 0)) 
+  {
     cout << " customDraw numDraws = " << numDraws << " drawMode: " << drawMode << endl;
   }
 
@@ -157,26 +177,41 @@ void customDraw() {
 
 void mousebutton(int button, int state, int x, int y)
 {
-  if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-    if( !mousePressed ) {
+  if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) 
+  {
+    if( !mousePressed ) 
+	{
       homeX = x;
       homeY = y;
       timeSincePress = 0;
     }
+
     double tx = -windowW/2 + (1.0*x/windowW)*(windowW);
     double ty = -windowH/2 + ((1.0*windowH-y)/windowH)*(windowH);
-    if( addIndividual )
-      gSim.AddMember(-1,tx,ty);
-    else if( addGroup )
-      for(int i=0; i<5; i++)
-	gSim.AddMember(-1,tx,ty);
-    else if( addAttractionPt ) {
+
+	if (addIndividual)
+	{
+		gSim.AddMember(-1, tx, ty);
+	}
+     
+	else if (addGroup)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			gSim.AddMember(-1, tx, ty);
+		}
+	}
+     
+    else if( addAttractionPt ) 
+	{
       gEnv->AddAttractionPoint(tx,ty);
     }
     mousePressed = true;
     glutPostRedisplay();
   }
-  if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+
+  if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) 
+  {
     cout << " release button " << endl;
     theta = theta+timeSincePress*speedTheta;
     speedTheta = 1;
@@ -185,18 +220,32 @@ void mousebutton(int button, int state, int x, int y)
     mousePressed = false;
     timeSincePress = 0;
   }
-  if( button == GLUT_MIDDLE_BUTTON && state == GLUT_DOWN ) {
+
+  if( button == GLUT_MIDDLE_BUTTON && state == GLUT_DOWN ) 
+  {
     cout << "glut_middle_button == down" << endl;
   }
 }
-void setBackgroundColor(int colorIndex, double colorDif, double colorRange) {
-	cout << "setBackgroundColor colorIndex = " << colorIndex
-	     << " colorDif = " << colorDif
-	     << " colorRange = " << colorRange << endl;
-	if( colorIndex>=colors.size() ) colorIndex = colors.size()-1;
+
+void setBackgroundColor(int colorIndex, double colorDif, double colorRange) 
+{
+	cout << "setBackgroundColor colorIndex = " << colorIndex;
+	cout << " colorDif = " << colorDif;
+	cout << " colorRange = " << colorRange << endl;
+
+	if (colorIndex >= colors.size())
+	{
+		colorIndex = colors.size() - 1;
+	}
+
 	MyColor& c_i = colors[colorIndex];
+
 	int j = colorIndex + 1;
-	if( j>= colors.size() ) j = colors.size()-1;
+	if (j >= colors.size())
+	{
+		j = colors.size() - 1;
+	}
+
 	MyColor& c_j = colors[j];
 
 	c_i.Print();
@@ -241,11 +290,14 @@ void keyboard(unsigned char key, int x, int y)
   switch (key)
   {
   case 'q':
+	exit(0);
+	break;
   case 27:             // ESCAPE key
-	  exit (0);
-	  break;
+	exit(0);
+	break;
   case ' ':
-	isSimulating = !isSimulating; break;
+	isSimulating = !isSimulating; 
+	break;
   case 'f':
   	isSimulating = true;
 	update();
@@ -253,28 +305,39 @@ void keyboard(unsigned char key, int x, int y)
   	break;
   case 'c':
   	isFollowing = !isFollowing; 
-	if( !isFollowing ) init();
+	if (!isFollowing)
+	{
+		init();
+	}
 	break;
   case 'e':
   	gEnv->MakeEmptyEnv();
   case 'a':
-  	gSim.ToggleControlledAdversary(); break;
+  	gSim.ToggleControlledAdversary(); 
+	break;
   case 'b':
-  	gSim.ToggleControlledAgent(); break;
+  	gSim.ToggleControlledAgent(); 
+	break;
   case '1':
-	drawMode = 1; break;
+	drawMode = 1; 
+	break;
   case '2':
-	drawMode = 2; break;
+	drawMode = 2; 
+	break;
   case '3':
-	drawMode = 3; break;
+	drawMode = 3; 
+	break;
   case 9: //tab key
-  	gSim.IncrementControllingAgent(); break;
+  	gSim.IncrementControllingAgent(); 
+	break;
 
   }
 }
 
-void otherKeyInput(int key, int x, int y) {
-  switch(key) {
+void otherKeyInput(int key, int x, int y) 
+{
+  switch(key) 
+  {
     case GLUT_KEY_UP:
       cout << "GLUT_KEY_UP" << endl;
       gSim.SendControl("forward");

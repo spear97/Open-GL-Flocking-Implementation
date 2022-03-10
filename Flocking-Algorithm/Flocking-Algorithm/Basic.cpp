@@ -1,5 +1,6 @@
 #include "Basic.h"
 
-double myRand() {
+double myRand() 
+{
 	return double(double(rand()) / RAND_MAX);
 }

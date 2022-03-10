@@ -4,8 +4,10 @@
 #include <GL/glut.h>  // (or others, depending on the system in use)
 #include "Basic.h"
 
-Simulator::Simulator() {
-  for(int i=0; i<8; i++) {
+Simulator::Simulator() 
+{
+  for(int i=0; i<8; i++) 
+  {
     //pos
     double x = 50+200*(myRand()-0.5);
     double y = 50+200*(myRand()-0.5);
@@ -32,9 +34,14 @@ Simulator::Simulator() {
   controlAgentIndex = -1;
 }
 
-void Simulator::AddMember(int index, double x, double y) {
+void Simulator::AddMember(int index, double x, double y) 
+{
   int i = index;
-  if( i<0 ) i = agents.size(); //if send in negative, set id to last in list
+  if (i < 0)
+  {
+      i = agents.size(); //if send in negative, set id to last in list
+  }
+
   double z = 0;
   Vector3d pos(x,y,z);
   //vel
@@ -53,53 +60,69 @@ void Simulator::AddMember(int index, double x, double y) {
   agents.push_back( a_i );
 }
 
-void Simulator::Draw() {
-  for(int i=0; i<(int)agents.size(); i++) {
+void Simulator::Draw() 
+{
+  for(int i=0; i<(int)agents.size(); i++) 
+  {
     agents[i].Draw();
   }
 }
 
-void Simulator::Update() {
+void Simulator::Update() 
+{
   //double dt = 0.1; //0.05;
-	double dt = 0.025;
-  for(int i=0; i<(int)agents.size(); i++) {
+  double dt = 0.025;
+  for(int i=0; i<(int)agents.size(); i++)
+  {
     agents[i].Update(agents, dt);
   }
-
-
 }
 
-void Simulator::IncrementControllingAgent() {
-  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) {
+void Simulator::IncrementControllingAgent() 
+{
+  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) 
+  {
     agents[controlAgentIndex].SetControlled(false);
   }
   controlAgentIndex++;
-  if( controlAgentIndex>=agents.size() ) controlAgentIndex = controlAgentIndex % agents.size();
+  if (controlAgentIndex >= agents.size())
+  {
+      controlAgentIndex = controlAgentIndex % agents.size();
+  }
   agents[controlAgentIndex].SetControlled(true);
 }
 
-void Simulator::SendControl(string control) {
-  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) {
+void Simulator::SendControl(string control) 
+{
+  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) 
+  {
     agents[controlAgentIndex].SetControl(control);
   }
 }
 
-void Simulator::ToggleControlledAgent() {
-  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) {
+void Simulator::ToggleControlledAgent() 
+{
+  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) 
+  {
     agents[controlAgentIndex].ToggleControlled();
   }
 }
-void Simulator::ToggleControlledAdversary() {
-  
-  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) {
+void Simulator::ToggleControlledAdversary() 
+{
+  if(controlAgentIndex>=0 && controlAgentIndex<agents.size()) 
+  {
     agents[controlAgentIndex].ToggleAdversary();
   }
 }
 
-Vector3d Simulator::GetPointToFollow() {
-  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) {
+Vector3d Simulator::GetPointToFollow() 
+{
+  if( controlAgentIndex>=0 && controlAgentIndex<agents.size() ) 
+  {
     return agents[controlAgentIndex].GetPos();
   }
-  else 
-    return agents[0].GetPos();
-}
+  else
+  {
+      return agents[0].GetPos();
+  }
+} 
