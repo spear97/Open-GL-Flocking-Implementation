@@ -387,7 +387,8 @@ Vector3d Agent::GetForceFromControl() {
 }
 
 //const double TWOPI = 6.28318;
-void drawCircle(double radius, int divisions, bool filled) {
+void drawCircle(double radius, int divisions, bool filled) 
+{
   double deltaAng = TWOPI / divisions;
   double curAng = 0;
   if (!filled)
@@ -460,6 +461,24 @@ void drawTriangleStatus(double length, double percStatus)
   glEnd();
 }
 
+void drawFish(double xradius, double yradius)
+{
+    //local variables
+    float degInRad;
+    float left, right, bottom;
+    const float DEG2RAD = 3.14159 / 180.0;
+
+    //Draw Body
+    glBegin(GL_POLYGON);
+    for (int i = 0; i < 360; i++)
+    {
+        //convert degrees into radians
+        degInRad = i * DEG2RAD;
+        glVertex2f(cos(degInRad) * xradius, sin(degInRad) * yradius);
+    }
+    glEnd();
+}
+
 void Agent::Draw() 
 {
     if (!isAdversary)
@@ -493,6 +512,14 @@ void Agent::Draw()
     drawTriangle(2*radius, isControlled);
     drawTriangleStatus(2*radius, 1.0*status/maxStatus);
     glPopMatrix();
+  }
+  else if (drawMode == 3)
+  {
+      glPushMatrix();
+      glTranslatef(pos.GetX(), pos.GetY(), 0);
+      glRotated(radToDeg(ori), 0, 0, 1);
+      drawFish(radius, radius/2);
+      glPopMatrix();
   }
   else 
   {
