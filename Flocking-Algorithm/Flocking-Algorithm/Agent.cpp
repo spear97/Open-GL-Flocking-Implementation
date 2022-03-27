@@ -462,16 +462,13 @@ void drawTriangleStatus(double length, double percStatus)
   glEnd();
 }
 
-void drawFish(double xradius, double yradius, double length)
+void drawBodyFish(double xradius, double yradius)
 {
     //local variables
     const float DEG2RAD = 3.14159 / 180.0;
     float degInRad;
     float x, y;
-    pair<float,float> tail;
-    pair<float, float> left;
-    pair<float, float> right;
-    
+
     //Draw Body
     glBegin(GL_POLYGON);
     for (int i = 0; i < 360; i++)
@@ -479,45 +476,29 @@ void drawFish(double xradius, double yradius, double length)
         //convert degrees into radians
         degInRad = i * DEG2RAD;
         x = cos(degInRad) * xradius, y = sin(degInRad) * yradius;
-        glVertex2f(cos(degInRad) * xradius, sin(degInRad) * yradius);
-
-        //Storing the Points that will be needed for the fins
-        if (i == 225)
-        {
-            tail.first = x-length, tail.second = y+length;
-            left.first = tail.first, left.second = tail.second-yradius;
-            right.first = tail.first + xradius, right.second = tail.second-yradius;
-        }
+        glVertex2f(x, y);
     }
     glEnd();
+}
 
-    //Calculate position of left vertex
-    x = left.first, y = left.second;
-    left.first = x*cos(theta)+y*sin(theta), left.second = -x*sin(theta)+y*cos(theta);
+void drawFishTail()
+{
+    glBegin(GL_POLYGON);
+    glVertex2f(-10.0, 4.0);
+    glVertex2f(-10.0, -4.0);
+    glVertex2f(-20.0, -8.0);
+    glVertex2f(-15.0, -2.0);
+    glVertex2f(-20.0, 9.0);
+    glEnd();
+}
 
-    //Calculate position of right vertex
-    x = right.first, y = right.second;
-    right.first = x*cos(theta)+y*sin(theta), left.second = -x*sin(theta)+y*cos(theta);
-
-    //Tail
+void drawFishFins()
+{
     glBegin(GL_TRIANGLES);
-    glVertex2f(tail.first, tail.second);
-    glVertex2f(left.first, left.second);
-    glVertex2f(right.first, right.second);
+    glVertex2f(10.0, -2.0);
+    glVertex2f(25.0, -2.0);
+    glVertex2f(0.0, -12.0);
     glEnd();
-    
-    if (rotLeft)
-    {
-        theta -= 10.f;
-    }
-    if (!rotLeft)
-    {
-        theta += 10.f;
-    }
-    if (theta == -180 || theta == 180)
-    {
-        rotLeft = !rotLeft;
-    }
 }
 
 void Agent::Draw() 
@@ -557,9 +538,19 @@ void Agent::Draw()
   else if (drawMode == 3)
   {
       glPushMatrix();
+
       glTranslatef(pos.GetX(), pos.GetY(), 0);
       glRotated(radToDeg(ori), 0, 0, 1);
-      drawFish(radius, radius/2, 10);
+      drawBodyFish(radius, radius/2);
+
+      glTranslatef(0.0, -1.0, 0.0);
+      glColor3ub(30, 50, 200);
+      drawFishTail();
+
+      glTranslatef(-11.0, 2.0, 0.0);
+      glColor3ub(30, 50, 200);
+      drawFishFins();
+
       glPopMatrix();
   }
   else 

@@ -42,6 +42,7 @@ bool isFollowing=false;
 bool addIndividual=true;
 bool addGroup=false;
 bool addAttractionPt=false;
+bool addAdversary=false;
 
 //Setups Top-Down View
 void init() 
@@ -191,14 +192,14 @@ void mousebutton(int button, int state, int x, int y)
 
 	if (addIndividual)
 	{
-		gSim.AddMember(-1, tx, ty);
+		gSim.AddMember(-1, tx, ty, addAdversary);
 	}
      
 	else if (addGroup)
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			gSim.AddMember(-1, tx, ty);
+			gSim.AddMember(-1, tx, ty, addAdversary);
 		}
 	}
      

@@ -56,6 +56,7 @@ public:
   { 
 	  isAdversary = !isAdversary; 
   }
+  void setIsAdversary(bool _adv) { isAdversary = _adv; }
   
   Vector3d GetForceFromControl();
   void ResolveCollisionWithOtherAgents(vector<Agent>& agents);

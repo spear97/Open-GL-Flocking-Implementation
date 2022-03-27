@@ -12,7 +12,7 @@ Simulator::Simulator()
     double x = 50+200*(myRand()-0.5);
     double y = 50+200*(myRand()-0.5);
     double z = 0;
-    AddMember(i,x,y); 
+    AddMember(i,x,y, false); 
     /*
     Vector3d pos(x,y,z);
     //vel
@@ -34,7 +34,7 @@ Simulator::Simulator()
   controlAgentIndex = -1;
 }
 
-void Simulator::AddMember(int index, double x, double y) 
+void Simulator::AddMember(int index, double x, double y, bool _adv) 
 {
   int i = index;
   if (i < 0)
@@ -57,6 +57,7 @@ void Simulator::AddMember(int index, double x, double y)
   //agents.push_back( Vector3d(x,y) );
   Agent a_i;
   a_i.Init(i,pos,vel,mass,maxVel,maxAccel,viewRadius);
+  a_i.setIsAdversary(_adv);
   agents.push_back( a_i );
 }
 
