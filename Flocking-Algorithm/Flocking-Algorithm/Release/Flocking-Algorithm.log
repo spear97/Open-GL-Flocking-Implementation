@@ -85,7 +85,7 @@ C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorit
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(607,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(618,17): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  2 of 419 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  1 of 419 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

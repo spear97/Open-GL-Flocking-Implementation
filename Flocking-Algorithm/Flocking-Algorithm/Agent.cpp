@@ -559,7 +559,7 @@ void Agent::Draw()
       glPushMatrix();
       glTranslatef(pos.GetX(), pos.GetY(), 0);
       glRotated(radToDeg(ori), 0, 0, 1);
-      drawFish(radius, radius/2, 4*radius/5);
+      drawFish(radius, radius/2, 10);
       glPopMatrix();
   }
   else 
