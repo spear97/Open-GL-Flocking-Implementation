@@ -484,9 +484,9 @@ void drawBodyFish(double xradius, double yradius)
 void drawFishTail()
 {
     glBegin(GL_POLYGON);
-    glVertex2f(-10.0, 4.0);
-    glVertex2f(-10.0, -4.0);
-    glVertex2f(-20.0, -8.0);
+    glVertex2f(-10.0, 4.0); // First Point -> rotX
+    glVertex2f(-10.0, -4.0); // Second Point -> rotX
+    glVertex2f(-30.0, -8.0); // Third Point -> rotX
     glVertex2f(-15.0, -2.0);
     glVertex2f(-20.0, 9.0);
     glEnd();
@@ -497,7 +497,7 @@ void drawFishFins()
     glBegin(GL_TRIANGLES);
     glVertex2f(10.0, -2.0);
     glVertex2f(25.0, -2.0);
-    glVertex2f(0.0, -12.0);
+    glVertex2f(0.0, -12.0); // Rot Point -> rotY
     glEnd();
 }
 
