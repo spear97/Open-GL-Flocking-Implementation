@@ -71,11 +71,32 @@ void Simulator::Draw()
 
 void Simulator::Update() 
 {
-  //double dt = 0.1; //0.05;
-  double dt = 0.025;
+   //Local Variables
+    double dt = 0.025;
+
+  //Update each Agent
   for(int i=0; i<(int)agents.size(); i++)
   {
     agents[i].Update(agents, dt);
+  }
+
+  for (int i = 0; i < (int)agents.size(); i++)
+  {
+      if (agents[i].IsAdversary())
+      {
+          if (agents[i].GetAdvLife() <= 0.f)
+          {
+            
+          }
+      }
+
+      else if (!agents[i].IsAdversary())
+      {
+          if (agents[i].GetBaseLife() <= 0.f)
+          {
+
+          }
+      }
   }
 }
 

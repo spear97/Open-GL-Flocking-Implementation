@@ -6,13 +6,11 @@
 #include <tuple>
 
 #include <GL/glut.h>  // (or others, depending on the system in use)
+
 bool agDebug = false;//true;
 
 extern int drawMode;
 
-tuple<float, float, float> BaseColor;
-tuple<float, float, float> AdvColor;
-tuple<int, int, int> FinColor;
 float theta = -180;
 bool rotOtherWay = false;
 
@@ -29,9 +27,6 @@ Agent::Agent() {
   maxStatus = status;
   isAdversary = false;
   tailLength = 40;
-  BaseColor = make_tuple(0.f, 0.f, 1.f);
-  AdvColor = make_tuple(1.f, 0.f, 0.f);
-  FinColor = make_tuple(112, 128, 144);
 } //empty constructor  
 
 void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass, 
@@ -60,10 +55,6 @@ void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass,
   status = 1000;
   maxStatus = status;
   isAdversary = false;
-
-  BaseColor = make_tuple(0.f, 0.f, 1.f);
-  AdvColor = make_tuple(1.f, 0.f, 0.f);
-  FinColor = make_tuple(112, 128, 144);
 }
 
 Agent::Agent(const Agent& other) {
@@ -90,9 +81,7 @@ Agent::Agent(const Agent& other) {
   maxStatus = other.maxStatus;
   isAdversary = other.isAdversary;
 
-  BaseColor = make_tuple(0.f, 0.f, 1.f);
-  AdvColor = make_tuple(1.f, 0.f, 0.f);
-  FinColor = make_tuple(112, 128, 144);
+  AdvR = 1.f, AdvG = 0.f, AdvB = 0.f;
 }
 
 Vector3d Agent::GetEnvironmentalForce(double mag) {
@@ -345,44 +334,38 @@ void Agent::Update(vector<Agent>& agents, double dt) {
     //cout << "ORI " << ori << endl;
   }
 
-  //TODO: LifeSpan
-  if (isAdversary)
-  {
+  //Lifetime
+  lifespan += 0.000000005;
 
-  }
-  if (!isAdversary)
+  bool wrapWorld = false;
+  if (wrapWorld)
   {
-
-  }
-
-  bool wrapWorld=false;
-  if( wrapWorld ) 
-  {
-    bool updated=false;
-    Vector3d pNew = gEnv->GetWrappedPosition(pos, updated);
-    if( updated ) 
-    {
-      pos = pNew;
-      pastPos.clear();
-    }
+      bool updated = false;
+      Vector3d pNew = gEnv->GetWrappedPosition(pos, updated);
+      if (updated)
+      {
+          pos = pNew;
+          pastPos.clear();
+      }
   }
 
-  bool cdWithAgents=true;
-  if( cdWithAgents )
+  bool cdWithAgents = true;
+  if (cdWithAgents)
   {
-    ResolveCollisionWithOtherAgents(agents);
+      ResolveCollisionWithOtherAgents(agents);
   }
 
-  bool cdWorld=true;
-  if( cdWorld ) 
+  bool cdWorld = true;
+  if (cdWorld)
   {
-    bool updated=false;
-    Vector3d pNew = gEnv->GetValidPosition(pos, oldPos, radius, vel, updated);
-    if( updated ) 
-    {
-      pos = pNew;
-    }
+      bool updated = false;
+      Vector3d pNew = gEnv->GetValidPosition(pos, oldPos, radius, vel, updated);
+      if (updated)
+      {
+          pos = pNew;
+      }
   }
+  
 }
 
 void Agent::SetControl(string control) {
@@ -536,12 +519,14 @@ void Agent::Draw()
 {
     if (!isAdversary)
     {
-        glColor3f(get<0>(BaseColor), get<1>(BaseColor), get<2>(BaseColor));
+        BaseB -= lifespan;
+        glColor3f(BaseR, BaseG, BaseB);
     }
     
     else
     {
-        glColor3f(get<0>(AdvColor), get<1>(AdvColor), get<2>(AdvColor));
+        AdvR -= lifespan;
+        glColor3f(AdvR, AdvG, AdvB);
     }
     
   /*
@@ -552,11 +537,21 @@ void Agent::Draw()
   */
   if( drawMode == 1 ) 
   {
-    glPushMatrix();
-    glTranslatef(pos.GetX(), pos.GetY(), 0);
-    //drawCircle(radius, 10, isControlled);
-    drawAgentAsCircle(radius, 10, isControlled, 1.0*status/maxStatus);
-    glPopMatrix();
+      glPushMatrix();
+
+      glTranslatef(pos.GetX(), pos.GetY(), 0);
+      glRotated(radToDeg(ori), 0, 0, 1);
+      drawBodyFish(radius, radius / 2);
+
+      glTranslatef(0.0, -1.0, 0.0);
+      glColor3ub(FinR, FinG, FinB);
+      drawFishTail();
+
+      glTranslatef(-11.0, 2.0, 0.0);
+      glColor3ub(FinR, FinG, FinB);
+      drawFishFins();
+
+      glPopMatrix();
   }
   else if( drawMode == 2 ) {
     glPushMatrix();
@@ -569,37 +564,9 @@ void Agent::Draw()
   else if (drawMode == 3)
   {
       glPushMatrix();
-
       glTranslatef(pos.GetX(), pos.GetY(), 0);
-      glRotated(radToDeg(ori), 0, 0, 1);
-      drawBodyFish(radius, radius/2);
-
-      glTranslatef(0.0, -1.0, 0.0);
-      glColor3ub(get<0>(FinColor), get<1>(FinColor), get<2>(FinColor));
-      drawFishTail();
-
-      glTranslatef(-11.0, 2.0, 0.0);
-      glColor3ub(get<0>(FinColor), get<1>(FinColor), get<2>(FinColor));
-      drawFishFins();
-
-      if(theta == -180)
-      {
-          rotOtherWay = false;
-      }
-      else if (theta == 180)
-      {
-          rotOtherWay = true;
-      }
-
-      if (rotOtherWay)
-      {
-          theta -= 5;
-      }
-      else if (!rotOtherWay)
-      {
-          theta += 5;
-      }
-      
+      //drawCircle(radius, 10, isControlled);
+      drawAgentAsCircle(radius, 10, isControlled, 1.0 * status / maxStatus);
       glPopMatrix();
   }
   else 

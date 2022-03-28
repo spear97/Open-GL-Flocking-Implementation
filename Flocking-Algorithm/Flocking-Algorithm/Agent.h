@@ -61,8 +61,12 @@ public:
   Vector3d GetForceFromControl();
   void ResolveCollisionWithOtherAgents(vector<Agent>& agents);
   Vector3d GetEnvironmentalForce(double mag);
+
+  float GetAdvLife() { return AdvR; }
+  float GetBaseLife() { return BaseB; }
  
 private:
+
   int id;
   Vector3d pos;
   Vector3d oldPos;
@@ -84,6 +88,12 @@ private:
   double maxVel;
   double maxAccel;
   double viewRadius;
+
+  const float dmg = 0.000000008f;
+  float lifespan = 0.f;
+  float AdvR=1.f, AdvG=0.f, AdvB=0.f;
+  float BaseR=0.f, BaseG=0.f, BaseB=1.f;
+  int FinR=112, FinG=128, FinB=144;
 
   bool initialized;
 
