@@ -51,7 +51,7 @@ void init()
 	glClearColor(bColor.r, bColor.g, bColor.b, 0.0); //Set display-window color to white.
 
 	glMatrixMode(GL_PROJECTION);      //Set projection parameters.
-  glLoadIdentity();
+	glLoadIdentity();
 	//gluOrtho2D(0.0, 200.0, 0.0, 150.0);
 	//gluOrtho2D(0.0, windowW, 0.0, windowH);
 	gluOrtho2D(-windowW/2,windowW/2, -windowH/2, windowH/2);

@@ -3,14 +3,18 @@
 
 #include "Agent.h"
 #include "Environment.h"
+#include <tuple>
 
 #include <GL/glut.h>  // (or others, depending on the system in use)
 bool agDebug = false;//true;
 
 extern int drawMode;
-int index = 0;
-bool rotLeft = false;
-float theta = 180.f;
+
+tuple<float, float, float> BaseColor;
+tuple<float, float, float> AdvColor;
+tuple<int, int, int> FinColor;
+float theta = -180;
+bool rotOtherWay = false;
 
 extern Environment* gEnv;
 
@@ -25,7 +29,11 @@ Agent::Agent() {
   maxStatus = status;
   isAdversary = false;
   tailLength = 40;
+  BaseColor = make_tuple(0.f, 0.f, 1.f);
+  AdvColor = make_tuple(1.f, 0.f, 0.f);
+  FinColor = make_tuple(112, 128, 144);
 } //empty constructor  
+
 void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass, 
                  double _maxVel, double _maxAccel, double _viewRadius){
   initialized = true;
@@ -52,6 +60,10 @@ void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass,
   status = 1000;
   maxStatus = status;
   isAdversary = false;
+
+  BaseColor = make_tuple(0.f, 0.f, 1.f);
+  AdvColor = make_tuple(1.f, 0.f, 0.f);
+  FinColor = make_tuple(112, 128, 144);
 }
 
 Agent::Agent(const Agent& other) {
@@ -77,6 +89,10 @@ Agent::Agent(const Agent& other) {
   status = other.status;
   maxStatus = other.maxStatus;
   isAdversary = other.isAdversary;
+
+  BaseColor = make_tuple(0.f, 0.f, 1.f);
+  AdvColor = make_tuple(1.f, 0.f, 0.f);
+  FinColor = make_tuple(112, 128, 144);
 }
 
 Vector3d Agent::GetEnvironmentalForce(double mag) {
@@ -151,10 +167,11 @@ void Agent::Update(vector<Agent>& agents, double dt) {
           }
 
 	    //see if within view radius
+          //TODO: Collision for Adversary and Non-Adversary Agents, update Adversary Agent Color
 	    double dist = (agents[i].GetPos()-pos).norm();
 	    if( dist < viewRadius )
         {
-	        if( agents[i].IsAdversary() && (dist<(radius+agents[i].GetRadius()+2.0)) ) 
+	        if( agents[i].IsAdversary() && (dist<(radius+agents[i].GetRadius())) ) 
             {
 	            numAdv++;
 	            if( dist<closestDistToAdv ) closestDistToAdv = dist; 
@@ -216,6 +233,11 @@ void Agent::Update(vector<Agent>& agents, double dt) {
           if (id == i)
           {
               continue; //skip self
+          }
+
+          if (agents[i].isAdversary)
+          {
+              continue;
           }
 	     //see if within view radius
 
@@ -323,6 +345,16 @@ void Agent::Update(vector<Agent>& agents, double dt) {
     //cout << "ORI " << ori << endl;
   }
 
+  //TODO: LifeSpan
+  if (isAdversary)
+  {
+
+  }
+  if (!isAdversary)
+  {
+
+  }
+
   bool wrapWorld=false;
   if( wrapWorld ) 
   {
@@ -351,7 +383,6 @@ void Agent::Update(vector<Agent>& agents, double dt) {
       pos = pNew;
     }
   }
-
 }
 
 void Agent::SetControl(string control) {
@@ -484,9 +515,9 @@ void drawBodyFish(double xradius, double yradius)
 void drawFishTail()
 {
     glBegin(GL_POLYGON);
-    glVertex2f(-10.0, 4.0); // First Point -> rotX
-    glVertex2f(-10.0, -4.0); // Second Point -> rotX
-    glVertex2f(-30.0, -8.0); // Third Point -> rotX
+    glVertex2f(-10.0, 4.0);
+    glVertex2f(-10.0, -4.0);
+    glVertex2f(-30.0, -8.0);
     glVertex2f(-15.0, -2.0);
     glVertex2f(-20.0, 9.0);
     glEnd();
@@ -497,7 +528,7 @@ void drawFishFins()
     glBegin(GL_TRIANGLES);
     glVertex2f(10.0, -2.0);
     glVertex2f(25.0, -2.0);
-    glVertex2f(0.0, -12.0); // Rot Point -> rotY
+    glVertex2f(0.0, -12.0);
     glEnd();
 }
 
@@ -505,12 +536,12 @@ void Agent::Draw()
 {
     if (!isAdversary)
     {
-        glColor3f(0.2, 0.2, 0.8);
+        glColor3f(get<0>(BaseColor), get<1>(BaseColor), get<2>(BaseColor));
     }
     
     else
     {
-        glColor3f(0.4, 0.9, 0.0);
+        glColor3f(get<0>(AdvColor), get<1>(AdvColor), get<2>(AdvColor));
     }
     
   /*
@@ -544,13 +575,31 @@ void Agent::Draw()
       drawBodyFish(radius, radius/2);
 
       glTranslatef(0.0, -1.0, 0.0);
-      glColor3ub(30, 50, 200);
+      glColor3ub(get<0>(FinColor), get<1>(FinColor), get<2>(FinColor));
       drawFishTail();
 
       glTranslatef(-11.0, 2.0, 0.0);
-      glColor3ub(30, 50, 200);
+      glColor3ub(get<0>(FinColor), get<1>(FinColor), get<2>(FinColor));
       drawFishFins();
 
+      if(theta == -180)
+      {
+          rotOtherWay = false;
+      }
+      else if (theta == 180)
+      {
+          rotOtherWay = true;
+      }
+
+      if (rotOtherWay)
+      {
+          theta -= 5;
+      }
+      else if (!rotOtherWay)
+      {
+          theta += 5;
+      }
+      
       glPopMatrix();
   }
   else 

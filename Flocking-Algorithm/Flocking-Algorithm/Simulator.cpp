@@ -46,7 +46,7 @@ void Simulator::AddMember(int index, double x, double y, bool _adv)
   Vector3d pos(x,y,z);
   //vel
   double vx = 20*(myRand()-0.5);
-  double vy = 20 * (myRand() - 0.5);
+  double vy = 20*(myRand()-0.5);
   double vz = 0;
   Vector3d vel(vx,vy,vz);
   double mass = 4 + myRand() * 10; //random between 4 and 14

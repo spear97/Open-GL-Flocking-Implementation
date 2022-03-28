@@ -1,71 +1,94 @@
 ﻿  Agent.cpp
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(296,25): warning C4018: '>': signed/unsigned mismatch
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(411,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(411,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(318,25): warning C4018: '>': signed/unsigned mismatch
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(442,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(443,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(443,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(444,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(444,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(451,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(451,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(452,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(452,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(453,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(453,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(454,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(454,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(458,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(458,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(459,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(459,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(460,37): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(460,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(461,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(461,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(468,42): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(478,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(478,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(508,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(513,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(525,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(525,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(532,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(532,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(542,40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(542,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(559,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(559,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(562,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(566,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(566,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(573,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(575,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(575,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(576,62): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(576,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(581,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(581,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(582,60): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(582,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(587,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(587,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(588,61): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(588,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(597,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(597,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(598,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(598,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(609,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(442,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(473,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(474,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(474,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(475,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(475,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(482,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(482,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(483,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(483,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(484,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(484,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(485,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(485,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(489,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(489,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(490,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(490,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(491,37): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(491,21): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(492,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(492,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(499,42): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(509,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(509,56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(556,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(556,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(563,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(563,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(573,40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(573,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(608,38): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(608,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(611,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(615,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(615,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(622,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(624,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(624,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(625,62): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(625,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(630,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(630,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(631,60): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(631,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(636,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(636,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(637,61): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(637,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(646,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(646,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(647,50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(647,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Agent.cpp(658,17): warning C4018: '<': signed/unsigned mismatch
+  Basic.cpp
   controllingAgent.cpp
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\controllingAgent.cpp(241,17): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\controllingAgent.cpp(249,8): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\controllingAgent.cpp(263,13): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\controllingAgent.cpp(264,13): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\controllingAgent.cpp(265,13): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+  Environment.cpp
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(37,34): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(42,34): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(49,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(52,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(52,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(53,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(53,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(54,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(54,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(55,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(55,19): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(157,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(186,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(186,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(202,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(206,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Environment.cpp(206,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Simulator.cpp
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(84,48): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(89,25): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(98,48): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(106,48): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(113,47): warning C4018: '<': signed/unsigned mismatch
+C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Flocking-Algorithm\Simulator.cpp(121,48): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  16 of 421 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 458 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Flocking-Algorithm.vcxproj -> C:\Users\seanp\Documents\Github\Open-GL-Flocking-Implementation\Flocking-Algorithm\Release\Flocking-Algorithm.exe
