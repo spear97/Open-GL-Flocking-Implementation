@@ -127,7 +127,7 @@ void createMenu()
 	glutAddMenuEntry("Add Indiv.",1);
 	glutAddMenuEntry("Add Group",2);
 	glutAddMenuEntry("Add Attraction Point",3);
-	glutAddMenuEntry("Add Adversary", 4);
+	glutAddMenuEntry("Toggle Adversary", 4);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
 

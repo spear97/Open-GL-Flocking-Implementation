@@ -89,11 +89,12 @@ private:
   double maxAccel;
   double viewRadius;
 
-  const float dmg = 0.000000008f;
-  float lifespan = 0.f;
-  float AdvR=1.f, AdvG=0.f, AdvB=0.f;
-  float BaseR=0.f, BaseG=0.f, BaseB=1.f;
-  int FinR=112, FinG=128, FinB=144;
+  //Move to Constructor and Copy Constructor
+  float dmg;
+  float lifespan;
+  float AdvR, AdvG, AdvB;
+  float BaseR, BaseG, BaseB;
+  int FinR, FinG, FinB;
 
   bool initialized;
 

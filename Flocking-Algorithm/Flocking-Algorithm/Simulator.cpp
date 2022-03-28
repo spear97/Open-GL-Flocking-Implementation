@@ -71,14 +71,15 @@ void Simulator::Draw()
 
 void Simulator::Update() 
 {
-   //Local Variables
     double dt = 0.025;
-
+   
   //Update each Agent
   for(int i=0; i<(int)agents.size(); i++)
   {
     agents[i].Update(agents, dt);
   }
+
+  int Del_Index = -1;
 
   for (int i = 0; i < (int)agents.size(); i++)
   {
@@ -86,7 +87,10 @@ void Simulator::Update()
       {
           if (agents[i].GetAdvLife() <= 0.f)
           {
-            
+            //Can't Delete Adversary here
+              //agents.erase(agents.begin()+i);
+              Del_Index = i;
+              break;
           }
       }
 
@@ -94,9 +98,17 @@ void Simulator::Update()
       {
           if (agents[i].GetBaseLife() <= 0.f)
           {
-
+              //Can't Delete Base Actors here
+              //agents.erase(agents.begin()+i);
+              Del_Index = i;
+              break;
           }
       }
+  }
+
+  if (Del_Index >= 0)
+  {
+      agents.erase(agents.begin() + Del_Index);
   }
 }
 

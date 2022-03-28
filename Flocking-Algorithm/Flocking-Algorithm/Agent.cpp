@@ -55,6 +55,12 @@ void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass,
   status = 1000;
   maxStatus = status;
   isAdversary = false;
+
+  dmg = 0.000000008f;
+  lifespan = 0.f;
+  AdvR = 1.f, AdvG = 0.f, AdvB = 0.f;
+  BaseR = 0.f, BaseG = 0.f, BaseB = 1.f;
+  FinR = 112, FinG = 128, FinB = 144;
 }
 
 Agent::Agent(const Agent& other) {
@@ -80,8 +86,17 @@ Agent::Agent(const Agent& other) {
   status = other.status;
   maxStatus = other.maxStatus;
   isAdversary = other.isAdversary;
-
-  AdvR = 1.f, AdvG = 0.f, AdvB = 0.f;
+  dmg = other.dmg;
+  lifespan = other.lifespan;
+  AdvR = other.AdvR;
+  AdvG = other.AdvG;
+  AdvB = other.AdvB;
+  BaseR = other.BaseR;
+  BaseG = other.BaseG;
+  BaseB = other.BaseB;
+  FinR = other.FinR;
+  FinG = other.FinG;
+  FinB = other.FinB;
 }
 
 Vector3d Agent::GetEnvironmentalForce(double mag) {
