@@ -56,7 +56,6 @@ void Agent::Init(int _id, Vector3d _pos, Vector3d _vel, double _mass,
   maxStatus = status;
   isAdversary = false;
 
-  dmg = 0.000000008f;
   lifespan = 0.f;
   AdvR = 1.f, AdvG = 0.f, AdvB = 0.f;
   BaseR = 0.f, BaseG = 0.f, BaseB = 1.f;
@@ -86,7 +85,6 @@ Agent::Agent(const Agent& other) {
   status = other.status;
   maxStatus = other.maxStatus;
   isAdversary = other.isAdversary;
-  dmg = other.dmg;
   lifespan = other.lifespan;
   AdvR = other.AdvR;
   AdvG = other.AdvG;
@@ -180,6 +178,7 @@ void Agent::Update(vector<Agent>& agents, double dt) {
 	            numAdv++;
 	            if( dist<closestDistToAdv ) closestDistToAdv = dist; 
 	        }
+
             if (agDebug)
             {
                 cout << "Agent: " << id << " is within range of agent: " << i << " dist= " << dist << " viewRadius= " << viewRadius << endl;
@@ -239,12 +238,7 @@ void Agent::Update(vector<Agent>& agents, double dt) {
               continue; //skip self
           }
 
-          if (agents[i].isAdversary)
-          {
-              continue;
-          }
 	     //see if within view radius
-
 	     double dist = (agents[i].GetPos()-pos).norm();
 	    if( dist < viewRadius && dist < closeDist ) 
         {
@@ -253,6 +247,7 @@ void Agent::Update(vector<Agent>& agents, double dt) {
 	        numSeen++;
 	    }
       }//endfor i
+
       force = maxAccel*(agents[closestIndex].GetPos()-pos).normalize();
     }
     
